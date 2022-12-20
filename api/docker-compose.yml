@@ -5,11 +5,14 @@ networks:
     driver: bridge
 
 services:
-#  monitor-api:
-#    build:
-#      context: .
-#      dockerfile: dockerfile
-#    image: monitor-api
+
+  monitor-api:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: monitor-api
+    ports:
+      - "1234:1234"
 
   prometheus:
     image: prom/prometheus:latest
